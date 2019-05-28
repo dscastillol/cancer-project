@@ -1,5 +1,5 @@
 from os import listdir
 from os.path import isfile, join
-onlyfiles = [f for f in listdir(r'F:\Documents\ISIC-Archive-Downloader-master\Data\Descriptions') if isfile(join(r'F:\Documents\ISIC-Archive-Downloader-master\Data\Descriptions', f))]
+onlyfiles = [f for f in listdir(r'C:\Users\davyd\Documents\cancer-project\descriptions') if isfile(join(r'C:\Users\davyd\Documents\cancer-project\descriptions', f))]
 
 print(onlyfiles)
