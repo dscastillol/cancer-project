@@ -68,7 +68,7 @@ df = os.path.join(val_dir, 'df')
 #os.mkdir(df)
 
 #Crear data de train y val
-df_data = pd.read_csv('C:\\Users\\davyd\\Documents\\cancer-project\\input\\HAM10000_metadata.csv')
+df_data = pd.read_csv('F:\\Descargas\\cancer-project\\input\\HAM10000_metadata.csv')
 
 #pprint(df_data.head())
 
@@ -135,7 +135,24 @@ df_data['train_or_val'] = df_data['train_or_val'].apply(identify_val_rows)
 df_train = df_data[df_data['train_or_val'] == 'train']
 
 
-print(df_train)
-print(df_val)
+#print(df_train)
+#print(df_val)
 
+df_data.set_index('image_id', inplace=True)
 
+folder_1 = os.listdir('F:\\Descargas\\cancer-project\\input\\ham10000_images_part_1')
+folder_2 = os.listdir('F:\\Descargas\\cancer-project\\input\\ham10000_images_part_2')
+
+train_list = list(df_train['image_id'])
+val_list = list(df_val['image_id'])
+
+print(len(train_list))
+print(len(val_list))
+
+print(len(os.listdir('base_dir/train_dir/nv')))
+print(len(os.listdir('base_dir/train_dir/mel')))
+print(len(os.listdir('base_dir/train_dir/bkl')))
+print(len(os.listdir('base_dir/train_dir/bcc')))
+print(len(os.listdir('base_dir/train_dir/akiec')))
+print(len(os.listdir('base_dir/train_dir/vasc')))
+print(len(os.listdir('base_dir/train_dir/df')))
